@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
 import Switch from "react-switch";
+import moment from "moment";
 import theme from "./theme";
 import "./index.css";
 
@@ -12,6 +13,11 @@ class App extends Component {
         <div className={classes.header}>Concierge App</div>
         <div className={classes.main}>
           <div>Content</div>
+          <div>
+            {moment()
+              .locale("fr")
+              .format("MMMM Do YYYY")}
+          </div>
           <Switch />
         </div>
       </div>
