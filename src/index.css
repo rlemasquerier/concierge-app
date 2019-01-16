@@ -1,1 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Fredoka+One");
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #b2dbbf;
+  font-family: "Fredoka One", "sans-serif";
+}

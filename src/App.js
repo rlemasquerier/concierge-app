@@ -21,13 +21,11 @@ class App extends Component {
 
 const styles = {
   container: {
-    fontFamily: "Fredoka One",
     position: "fixed",
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    height: "100%",
-    backgroundColor: theme.colors.lightGreen
+    height: "100%"
   },
   header: {
     color: theme.colors.red,
