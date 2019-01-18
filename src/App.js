@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
-import Switch from "react-switch";
 import moment from "moment";
+import LEDControl from "./components/LEDControl/LEDControl";
 import theme from "./theme";
 import "./index.css";
 
@@ -18,7 +18,7 @@ class App extends Component {
               .locale("fr")
               .format("MMMM Do YYYY")}
           </div>
-          <Switch />
+          <LEDControl />
         </div>
       </div>
     );
