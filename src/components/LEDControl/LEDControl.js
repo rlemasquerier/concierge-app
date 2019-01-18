@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Switch from "react-switch";
+import axios from "axios";
 
 class LEDControl extends Component {
   constructor() {
@@ -9,6 +10,16 @@ class LEDControl extends Component {
   handleChange = checked => {
     this.setState({ checked });
   };
+  componentDidUpdate() {
+    axios
+      .get("http://89.86.71.5/led-control")
+      .then(res => {
+        console.log(res);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   render() {
     return (
       <div>
