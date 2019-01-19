@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import injectSheet from "react-jss";
 import moment from "moment";
 import LEDControl from "./components/LEDControl/LEDControl";
-import theme from "./theme";
 import "./index.css";
+import "./icons.css";
+import Header from "./components/common/Header/Header";
 
 class App extends Component {
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.container}>
-        <div className={classes.header}>Concierge App</div>
+        <Header />
         <div className={classes.main}>
           <div>Content</div>
           <div>
@@ -19,6 +20,7 @@ class App extends Component {
               .format("MMMM Do YYYY")}
           </div>
           <LEDControl />
+          <span className={["icon-home", classes.homeIcon].join(" ")} />
         </div>
       </div>
     );
@@ -33,12 +35,12 @@ const styles = {
     width: "100%",
     height: "100%"
   },
-  header: {
-    color: theme.colors.red,
-    flex: 1
-  },
+
   main: {
     flex: 4
+  },
+  homeIcon: {
+    fontSize: 50
   }
 };
 
