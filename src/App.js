@@ -37,7 +37,7 @@ const styles = {
   },
 
   main: {
-    flex: 4
+    flex: 3
   },
   homeIcon: {
     fontSize: 50
