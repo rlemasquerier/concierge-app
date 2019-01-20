@@ -13,6 +13,7 @@ class App extends Component {
       <div className={classes.container}>
         <Header />
         <div className={classes.main}>
+          <hr />
           <div>Content</div>
           <div>
             {moment()
