@@ -1,0 +1,21 @@
+# ninja log v5
+0	44	1549818304	src/components/Greetings/Greetings.mlast	86aae1e655db2887
+44	50	1549818304	src/components/Greetings/Greetings.mlast.d	d175697f07898e08
+1	16	1549818304	src/components/Greetings/Greetings.cmj	e39d41c3bb99055e
+1	16	1549818304	/Users/rlemas/Dev/concierge-app/src/components/Greetings/Greetings.js	e39d41c3bb99055e
+1	16	1549818304	src/components/Greetings/Greetings.cmi	e39d41c3bb99055e
+0	34	1549818572	src/components/Greetings/Greetings.mlast	86aae1e655db2887
+34	40	1549818572	src/components/Greetings/Greetings.mlast.d	d175697f07898e08
+0	19	1549818572	src/components/Greetings/Greetings.cmj	e39d41c3bb99055e
+0	19	1549818572	/Users/rlemas/Dev/concierge-app/src/components/Greetings/Greetings.js	e39d41c3bb99055e
+0	19	1549818572	src/components/Greetings/Greetings.cmi	e39d41c3bb99055e
+0	68	1549820518	src/components/Greetings/Greetings.mlast	86aae1e655db2887
+68	75	1549820518	src/components/Greetings/Greetings.mlast.d	d175697f07898e08
+0	24	1549820518	src/components/Greetings/Greetings.cmj	e39d41c3bb99055e
+0	24	1549820518	/Users/rlemas/Dev/concierge-app/src/components/Greetings/Greetings.js	e39d41c3bb99055e
+0	24	1549820518	src/components/Greetings/Greetings.cmi	e39d41c3bb99055e
+1	33	1549820526	src/components/Greetings/Greetings.mlast	86aae1e655db2887
+33	39	1549820526	src/components/Greetings/Greetings.mlast.d	d175697f07898e08
+0	20	1549820526	src/components/Greetings/Greetings.cmj	e39d41c3bb99055e
+0	20	1549820526	/Users/rlemas/Dev/concierge-app/src/components/Greetings/Greetings.js	e39d41c3bb99055e
+0	20	1549820526	src/components/Greetings/Greetings.cmi	e39d41c3bb99055e

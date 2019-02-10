@@ -1,0 +1,1 @@
+{ "dirs" : [ "src" , "src/fonts" , "src/components" , "src/components/common" , "src/components/common/Header" , "src/components/common/Header/assets" , "src/components/Greetings" , "src/components/LEDControl" ] , "generated" : [] }

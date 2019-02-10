@@ -1,0 +1,14 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx '/Users/rlemas/Dev/concierge-app/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
+FLG -ppx /Users/rlemas/Dev/concierge-app/node_modules/bs-platform/lib/bsppx.exe
+S /Users/rlemas/Dev/concierge-app/node_modules/bs-platform/lib/ocaml
+B /Users/rlemas/Dev/concierge-app/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib -color always
+FLG -w -30-40+6+7+27+32..39+44+45+101
+S /Users/rlemas/Dev/concierge-app/node_modules/reason-react/lib/ocaml
+B /Users/rlemas/Dev/concierge-app/node_modules/reason-react/lib/ocaml
+S /Users/rlemas/Dev/concierge-app/node_modules/reason-js/lib/ocaml
+B /Users/rlemas/Dev/concierge-app/node_modules/reason-js/lib/ocaml
+S src/components/Greetings
+B lib/bs/src/components/Greetings
+####BSB GENERATED: NO EDIT}
