@@ -33,6 +33,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "bs-platform": "^4.0.18"
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "bs-platform": "^4.0.18",
+    "flow-bin": "^0.93.0"
   }
 }

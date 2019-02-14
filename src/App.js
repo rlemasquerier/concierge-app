@@ -1,13 +1,17 @@
+// @flow
+
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import moment from 'moment';
 import LEDControl from './components/LEDControl/LEDControl';
-import Greetings from './components/Greetings/Greetings';
 import './index.css';
 import './icons.css';
 import Header from './components/common/Header/Header';
 
-class App extends Component {
+type Props = {
+  classes: Object,
+};
+class App extends Component<Props> {
   render() {
     const { classes } = this.props;
     return (
@@ -22,7 +26,6 @@ class App extends Component {
               .format('MMMM Do YYYY')}
           </div>
           <LEDControl />
-          <Greetings message="Hello from Reason" />
           <span className={['icon-home', classes.homeIcon].join(' ')} />
         </div>
       </div>

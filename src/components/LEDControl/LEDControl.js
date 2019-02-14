@@ -1,13 +1,21 @@
+// @flow
+
 import React, { Component } from 'react';
 import Switch from 'react-switch';
 import axios from 'axios';
 
-class LEDControl extends Component {
-  constructor() {
-    super();
-    this.state = { checked: false };
-  }
-  handleChange = checked => {
+type Props = {};
+
+type State = {
+  checked: boolean,
+};
+
+class LEDControl extends Component<Props, State> {
+  state = {
+    checked: false,
+  };
+
+  handleChange = (checked: boolean): void => {
     this.setState({ checked });
   };
   componentDidUpdate() {
