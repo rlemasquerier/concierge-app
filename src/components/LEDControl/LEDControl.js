@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Switch from "react-switch";
-import axios from "axios";
+import React, { Component } from 'react';
+import Switch from 'react-switch';
+import axios from 'axios';
 
 class LEDControl extends Component {
   constructor() {
@@ -12,7 +12,7 @@ class LEDControl extends Component {
   };
   componentDidUpdate() {
     axios
-      .get("http://89.86.71.5/led-control")
+      .get('http://89.86.71.5/led-control')
       .then(res => {
         console.log(res);
       })
@@ -24,11 +24,7 @@ class LEDControl extends Component {
     return (
       <div>
         <span>LED :</span>
-        <Switch
-          onChange={this.handleChange}
-          checked={this.state.checked}
-          id="normal-switch"
-        />
+        <Switch onChange={this.handleChange} checked={this.state.checked} id="normal-switch" />
       </div>
     );
   }

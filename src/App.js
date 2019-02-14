@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import injectSheet from "react-jss";
-import moment from "moment";
-import LEDControl from "./components/LEDControl/LEDControl";
-import Greetings from "./components/Greetings/Greetings";
-import "./index.css";
-import "./icons.css";
-import Header from "./components/common/Header/Header";
+import React, { Component } from 'react';
+import injectSheet from 'react-jss';
+import moment from 'moment';
+import LEDControl from './components/LEDControl/LEDControl';
+import Greetings from './components/Greetings/Greetings';
+import './index.css';
+import './icons.css';
+import Header from './components/common/Header/Header';
 
 class App extends Component {
   render() {
@@ -18,12 +18,12 @@ class App extends Component {
           <div>Content</div>
           <div>
             {moment()
-              .locale("fr")
-              .format("MMMM Do YYYY")}
+              .locale('fr')
+              .format('MMMM Do YYYY')}
           </div>
           <LEDControl />
           <Greetings message="Hello from Reason" />
-          <span className={["icon-home", classes.homeIcon].join(" ")} />
+          <span className={['icon-home', classes.homeIcon].join(' ')} />
         </div>
       </div>
     );
@@ -32,19 +32,19 @@ class App extends Component {
 
 const styles = {
   container: {
-    position: "fixed",
-    display: "flex",
-    flexDirection: "column",
-    width: "100%",
-    height: "100%"
+    position: 'fixed',
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100%',
   },
 
   main: {
-    flex: 3
+    flex: 3,
   },
   homeIcon: {
-    fontSize: 50
-  }
+    fontSize: 50,
+  },
 };
 
 export default injectSheet(styles)(App);
