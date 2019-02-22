@@ -1,3 +1,5 @@
+// @flow
+
 const theme = {
   colors: {
     yellow: '#F3FFBD',

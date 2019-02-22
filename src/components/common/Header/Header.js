@@ -1,9 +1,14 @@
+// @flow
+
 import injectSheet from 'react-jss';
 import React, { Component } from 'react';
 import logo from './assets/logo.png';
 import theme from '../../../theme';
 
-class Header extends Component {
+type Props = {
+  classes: Object,
+};
+class Header extends Component<Props> {
   render() {
     const { classes } = this.props;
     return (
