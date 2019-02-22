@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
+import { Login } from './pages';
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
   <Router>
     <div>
       <Route exact path="/" component={App} />
+      <Route exact path="/login" component={Login} />
     </div>
   </Router>
 );
