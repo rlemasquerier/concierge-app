@@ -15,8 +15,8 @@ type State = {};
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email()
-    .required('Required'),
-  password: Yup.string().required('No password provided.'),
+    .required('Le champ est requis'),
+  password: Yup.string().required('Le champ est requis'),
 });
 
 class Login extends Component<Props, State> {
