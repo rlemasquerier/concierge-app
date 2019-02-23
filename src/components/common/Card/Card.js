@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+// @flow
+
+import * as React from 'react';
 import injectSheet from 'react-jss';
 import theme from '../../../theme';
 
@@ -7,7 +9,7 @@ type Props = {
   classes: Object,
 };
 
-class Card extends Component<Props> {
+class Card extends React.Component<Props> {
   render() {
     const { classes } = this.props;
     console.log('classes.card', classes.card);

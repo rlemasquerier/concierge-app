@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Header, Card, InputField } from '../../components/common';
+import { Header, Card, InputField, Button } from '../../components/common';
 
 type Props = {
   classes: Object,
@@ -33,60 +33,66 @@ class Login extends Component<Props, State> {
       <div className={classes.container}>
         <Header />
         <Card>
-          <Formik
-            initialValues={{ email: '' }}
-            onSubmit={this.submitForm}
-            validationSchema={validationSchema}
-          >
-            {props => {
-              const {
-                values,
-                touched,
-                errors,
-                isSubmitting,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-              } = props;
-              return (
-                <form onSubmit={handleSubmit}>
-                  <InputField
-                    id="email"
-                    placeholder="Email"
-                    type="text"
-                    value={values.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={errors.email && touched.email ? 'text-input error' : 'text-input'}
-                    error={errors.email}
-                    touched={touched.email}
-                  />
-                  <InputField
-                    id="password"
-                    placeholder="Mot de passe"
-                    type="password"
-                    value={values.password}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={
-                      errors.password && touched.password ? 'text-input error' : 'text-input'
-                    }
-                    error={errors.password}
-                    touched={touched.password}
-                  />
-                  <button type="submit" disabled={isSubmitting}>
-                    Se Connecter
-                  </button>
-                </form>
-              );
-            }}
-          </Formik>
+          <div className={classes.formContainer}>
+            <h2>Connexion</h2>
+            <Formik
+              initialValues={{ email: '', password: '' }}
+              onSubmit={this.submitForm}
+              validationSchema={validationSchema}
+            >
+              {props => {
+                const {
+                  values,
+                  touched,
+                  errors,
+                  isSubmitting,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                } = props;
+                return (
+                  <form onSubmit={handleSubmit}>
+                    <InputField
+                      id="email"
+                      placeholder="Email"
+                      type="text"
+                      value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={errors.email}
+                      touched={touched.email}
+                    />
+                    <InputField
+                      id="password"
+                      placeholder="Mot de passe"
+                      type="password"
+                      value={values.password}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={errors.password}
+                      touched={touched.password}
+                    />
+                    <Button type="submit" disabled={isSubmitting}>
+                      Se Connecter
+                    </Button>
+                  </form>
+                );
+              }}
+            </Formik>
+          </div>
         </Card>
       </div>
     );
   }
 }
 
-const styles = {};
+const styles = {
+  formContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+};
 
 export default injectSheet(styles)(Login);
