@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Header, Card } from '../../components/common';
+import { Header, Card, InputField } from '../../components/common';
 
 type Props = {
   classes: Object,
@@ -32,7 +32,6 @@ class Login extends Component<Props, State> {
     return (
       <div className={classes.container}>
         <Header />
-        <hr />
         <Card>
           <Formik
             initialValues={{ email: '' }}
@@ -51,10 +50,7 @@ class Login extends Component<Props, State> {
               } = props;
               return (
                 <form onSubmit={handleSubmit}>
-                  <label htmlFor="email" style={{ display: 'block' }}>
-                    Email
-                  </label>
-                  <input
+                  <InputField
                     id="email"
                     placeholder="Email"
                     type="text"
@@ -62,14 +58,10 @@ class Login extends Component<Props, State> {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={errors.email && touched.email ? 'text-input error' : 'text-input'}
+                    error={errors.email}
+                    touched={touched.email}
                   />
-                  {errors.email && touched.email && (
-                    <div className="input-feedback">{errors.email}</div>
-                  )}
-                  <label htmlFor="password" style={{ display: 'block' }}>
-                    Mot de passe
-                  </label>
-                  <input
+                  <InputField
                     id="password"
                     placeholder="Mot de passe"
                     type="password"
@@ -79,12 +71,11 @@ class Login extends Component<Props, State> {
                     className={
                       errors.password && touched.password ? 'text-input error' : 'text-input'
                     }
+                    error={errors.password}
+                    touched={touched.password}
                   />
-                  {errors.password && touched.password && (
-                    <div className="input-feedback">{errors.password}</div>
-                  )}
                   <button type="submit" disabled={isSubmitting}>
-                    Submit
+                    Se Connecter
                   </button>
                 </form>
               );
