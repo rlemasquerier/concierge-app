@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Header, Card, InputField, Button } from '../../components/common';
+import { Card, InputField, Button, Page } from '../../components/common';
 
 type Props = {
   classes: Object,
@@ -28,10 +28,8 @@ class Login extends Component<Props, State> {
   };
   render() {
     const { classes } = this.props;
-    console.log(this.props);
     return (
-      <div className={classes.container}>
-        <Header />
+      <Page>
         <Card>
           <div className={classes.formContainer}>
             <h2>Connexion</h2>
@@ -50,6 +48,7 @@ class Login extends Component<Props, State> {
                   handleBlur,
                   handleSubmit,
                 } = props;
+
                 return (
                   <form className={classes.form} onSubmit={handleSubmit}>
                     <InputField
@@ -72,7 +71,7 @@ class Login extends Component<Props, State> {
                       error={errors.password}
                       touched={touched.password}
                     />
-                    <Button type="submit" disabled={isSubmitting}>
+                    <Button type="submit" disabled={isSubmitting || Object.keys(errors).length > 0}>
                       Se Connecter
                     </Button>
                   </form>
@@ -81,7 +80,7 @@ class Login extends Component<Props, State> {
             </Formik>
           </div>
         </Card>
-      </div>
+      </Page>
     );
   }
 }

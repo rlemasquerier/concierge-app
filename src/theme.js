@@ -19,6 +19,9 @@ const theme = {
     medium: 20,
     large: 30,
   },
+  cards: {
+    maxWidth: 375,
+  },
 };
 
 export default theme;

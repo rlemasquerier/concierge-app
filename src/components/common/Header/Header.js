@@ -22,7 +22,6 @@ class Header extends Component<Props> {
 
 const styles = {
   headerContainer: {
-    flex: 1,
     fontSize: 30,
     textAlign: 'center',
     '@media (max-width: 500px)': {

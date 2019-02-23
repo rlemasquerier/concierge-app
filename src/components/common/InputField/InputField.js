@@ -10,7 +10,6 @@ type Props = {
 class InputField extends Component<Props> {
   render() {
     const { classes, error, touched, label, placeholder, ...props } = this.props;
-    console.log(label);
     return (
       <div className={classes.container}>
         <TextField

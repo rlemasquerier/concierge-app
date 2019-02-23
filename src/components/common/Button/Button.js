@@ -11,10 +11,10 @@ type Props = {
 };
 class Button extends React.Component<Props> {
   render() {
-    const { classes } = this.props;
+    const { classes, ...props } = this.props;
     return (
       <div className={classes.container}>
-        <MaterialButton variant="contained" color="secondary">
+        <MaterialButton variant="contained" color="secondary" {...props}>
           {this.props.children}
         </MaterialButton>
       </div>

@@ -12,7 +12,6 @@ type Props = {
 class Card extends React.Component<Props> {
   render() {
     const { classes } = this.props;
-    console.log('classes.card', classes.card);
     return <div className={classes.card}>{this.props.children}</div>;
   }
 }
