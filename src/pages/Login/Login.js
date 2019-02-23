@@ -51,7 +51,7 @@ class Login extends Component<Props, State> {
                   handleSubmit,
                 } = props;
                 return (
-                  <form onSubmit={handleSubmit}>
+                  <form className={classes.form} onSubmit={handleSubmit}>
                     <InputField
                       id="email"
                       placeholder="Email"
@@ -88,6 +88,12 @@ class Login extends Component<Props, State> {
 
 const styles = {
   formContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  form: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

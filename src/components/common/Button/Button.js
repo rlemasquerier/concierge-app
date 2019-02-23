@@ -9,13 +9,23 @@ type Props = {
   children: React.Node,
   classes: Object,
 };
-
 class Button extends React.Component<Props> {
   render() {
-    return <MaterialButton color={theme.colors.red}>{this.props.children}</MaterialButton>;
+    const { classes } = this.props;
+    return (
+      <div className={classes.container}>
+        <MaterialButton variant="contained" color="secondary">
+          {this.props.children}
+        </MaterialButton>
+      </div>
+    );
   }
 }
 
-const styles = {};
+const styles = {
+  container: {
+    marginTop: theme.margins.medium,
+  },
+};
 
 export default injectSheet(styles)(Button);
