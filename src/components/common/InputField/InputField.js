@@ -12,13 +12,8 @@ class InputField extends Component<Props> {
     const { classes, error, touched, label, placeholder, ...props } = this.props;
     return (
       <div className={classes.container}>
-        <TextField
-          error={error && touched}
-          variant="outlined"
-          label={label || placeholder}
-          {...props}
-        />
-        {error && touched && <div className="input-feedback">{error}</div>}
+        <TextField variant="outlined" label={label || placeholder} {...props} />
+        {error && touched && <div className={classes.error}>{error}</div>}
       </div>
     );
   }
@@ -28,7 +23,10 @@ const styles = {
   container: {
     marginTop: theme.margins.medium,
   },
-  error: {},
+  error: {
+    fontSize: 11,
+    color: theme.colors.red,
+  },
 };
 
 export default injectSheet(styles)(InputField);
