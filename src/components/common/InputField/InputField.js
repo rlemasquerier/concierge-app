@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { TextField } from '@material-ui/core';
@@ -5,6 +7,10 @@ import theme from '../../../theme';
 
 type Props = {
   classes: Object,
+  error: string,
+  touched: boolean,
+  label: string,
+  placeholder: string,
 };
 
 class InputField extends Component<Props> {
