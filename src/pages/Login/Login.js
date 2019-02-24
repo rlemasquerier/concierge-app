@@ -8,6 +8,7 @@ import { Card, InputField, Button, Page } from '../../components/common';
 
 type Props = {
   classes: Object,
+  simpleAction: () => any,
 };
 
 type State = {};
@@ -27,6 +28,7 @@ const validationSchema = Yup.object().shape({
 
 class Login extends Component<Props, State> {
   submitForm = (values: { email: string, password: string }, actions: Object) => {
+    this.props.simpleAction();
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       actions.setSubmitting(false);
