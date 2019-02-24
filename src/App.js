@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import { Route, Redirect, BrowserRouter as Router } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core';
+import { Provider } from 'react-redux';
+import configureStore from './redux/store';
 import './index.css';
 import './icons.css';
 import { Dashboard, Login } from './pages';
@@ -22,12 +24,14 @@ class App extends Component<Props> {
   render() {
     return (
       <MuiThemeProvider theme={muiTheme}>
-        <Router>
-          <div>
-            <PrivateRoute exact path="/" component={Dashboard} />
-            <Route exact path="/login" component={Login} />
-          </div>
-        </Router>
+        <Provider store={configureStore()}>
+          <Router>
+            <div>
+              <PrivateRoute exact path="/" component={Dashboard} />
+              <Route exact path="/login" component={Login} />
+            </div>
+          </Router>
+        </Provider>
       </MuiThemeProvider>
     );
   }
