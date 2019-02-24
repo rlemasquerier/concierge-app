@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Route, Redirect, BrowserRouter as Router } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import configureStore from './redux/store';
 import './index.css';
 import './icons.css';
@@ -22,15 +23,18 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 );
 class App extends Component<Props> {
   render() {
+    const { store, persistor } = configureStore();
     return (
       <MuiThemeProvider theme={muiTheme}>
-        <Provider store={configureStore()}>
-          <Router>
-            <div>
-              <PrivateRoute exact path="/" component={Dashboard} />
-              <Route exact path="/login" component={Login} />
-            </div>
-          </Router>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <Router>
+              <div>
+                <PrivateRoute exact path="/" component={Dashboard} />
+                <Route exact path="/login" component={Login} />
+              </div>
+            </Router>
+          </PersistGate>
         </Provider>
       </MuiThemeProvider>
     );
