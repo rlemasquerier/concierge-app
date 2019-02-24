@@ -12,6 +12,12 @@ type Props = {
 
 type State = {};
 
+Yup.setLocale({
+  string: {
+    email: `L'email est invalide`,
+  },
+});
+
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email()

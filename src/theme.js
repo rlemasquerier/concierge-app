@@ -1,5 +1,7 @@
 // @flow
 
+import { createMuiTheme } from '@material-ui/core';
+
 const theme = {
   colors: {
     yellow: '#F3FFBD',
@@ -22,6 +24,23 @@ const theme = {
   cards: {
     maxWidth: 375,
   },
+  fonts: '"Fredoka One", serif',
 };
 
+const muiTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: theme.colors.blue,
+    },
+    secondary: {
+      main: theme.colors.red,
+    },
+  },
+  typography: {
+    fontFamily: theme.fonts,
+    useNextVariants: true,
+  },
+});
+
 export default theme;
+export { muiTheme };
