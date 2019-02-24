@@ -9,6 +9,7 @@ import { Card, InputField, Button, Page } from '../../components/common';
 type Props = {
   classes: Object,
   simpleAction: () => any,
+  login: ({ mail: string, password: string }) => Promise<any>,
 };
 
 type State = {};
@@ -20,29 +21,27 @@ Yup.setLocale({
 });
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string()
-    .email()
+  mail: Yup.string()
+    //.email()
     .required('Le champ est requis'),
   password: Yup.string().required('Le champ est requis'),
 });
 
 class Login extends Component<Props, State> {
-  submitForm = (values: { email: string, password: string }, actions: Object) => {
+  submitForm = async (values: { mail: string, password: string }, actions: Object) => {
     this.props.simpleAction();
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      actions.setSubmitting(false);
-    }, 500);
+    await this.props.login(values);
   };
   render() {
     const { classes } = this.props;
+    console.log(this.props);
     return (
       <Page>
         <Card>
           <div className={classes.formContainer}>
             <h2>Connexion</h2>
             <Formik
-              initialValues={{ email: '', password: '' }}
+              initialValues={{ mail: '', password: '' }}
               onSubmit={this.submitForm}
               validationSchema={validationSchema}
             >
@@ -60,14 +59,14 @@ class Login extends Component<Props, State> {
                 return (
                   <form className={classes.form} onSubmit={handleSubmit}>
                     <InputField
-                      id="email"
+                      id="mail"
                       placeholder="Email"
                       type="text"
-                      value={values.email}
+                      value={values.mail}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      error={errors.email}
-                      touched={touched.email}
+                      error={errors.mail}
+                      touched={touched.mail}
                     />
                     <InputField
                       id="password"
