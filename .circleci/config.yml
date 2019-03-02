@@ -21,8 +21,8 @@ jobs:
             - v1-dependencies-
 
       - run:
-        name: Install dependencies
-        command: yarn install
+          name: Install dependencies
+          command: yarn install
 
       - save_cache:
           paths:
@@ -30,9 +30,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-        name: Run Eslint
-        command: yarn eslint . --quiet
+          name: Run Eslint
+          command: yarn eslint . --quiet
 
       - run:
-        name: Run tests
-        command: yarn jest
+          name: Run tests
+          command: yarn jest
