@@ -11,9 +11,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export default function configureStore(
-  initialState: Object = { simpleReducer: null, authReducer: null }
-) {
+export default function configureStore(initialState: Object = { test: null, auth: null }) {
   const store = createStore(persistedReducer, initialState, applyMiddleware(thunk));
   const persistor = persistStore(store);
   return { store, persistor };

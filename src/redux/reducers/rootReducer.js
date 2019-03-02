@@ -6,6 +6,6 @@ import authReducer from './authReducer';
 
 // $FlowFixMe
 export default combineReducers({
-  simpleReducer,
-  authReducer,
+  test: simpleReducer,
+  auth: authReducer,
 });
