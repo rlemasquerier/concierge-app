@@ -1,11 +1,5 @@
 {
   "name": "concierge-app",
-  "jest": {
-    "projects": [
-      "<rootDir>/tests/*"
-    ],
-    "verbose": true
-  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
