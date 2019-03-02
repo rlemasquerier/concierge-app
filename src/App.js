@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Route, Redirect, BrowserRouter as Router } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core';
 import { Provider } from 'react-redux';
+// $FlowFixMe
 import { PersistGate } from 'redux-persist/integration/react';
 import configureStore from './redux/store';
 import './index.css';

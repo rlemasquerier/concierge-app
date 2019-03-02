@@ -10,7 +10,7 @@ type LoginResponse = {
   role: string,
 };
 
-type LoginAction = {
+export type LoginAction = {
   type: 'AUTH.LOGIN_SUCCESS',
   payload: LoginResponse,
 };
@@ -20,7 +20,10 @@ const createLoginAction = (payload: LoginResponse): LoginAction => ({
   payload,
 });
 
-export const login = (credentials: Credentials) => async (dispatch: Function) => {
+type Dispatch = (action: LoginAction) => any;
+type ThunkAction = (dispatch: Dispatch) => any;
+
+export const login = (credentials: Credentials): ThunkAction => async (dispatch: Dispatch): any => {
   try {
     const response = await axios.post('http://localhost:3000/admin/login', credentials);
     const result = {
