@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
-import { Dashboard, Login } from './pages';
+import { Dashboard, Login, FeedTheCat } from './pages';
 
 type Props = {
   auth: Object,
@@ -24,6 +24,7 @@ class Router extends Component<Props> {
       <BrowserRouter>
         <div>
           <PrivateRoute exact auth={this.props.auth} path="/" component={Dashboard} />
+          <PrivateRoute exact auth={this.props.auth} path="/feed-the-cat" component={FeedTheCat} />
           <Route exact path="/login" component={Login} />
         </div>
       </BrowserRouter>
