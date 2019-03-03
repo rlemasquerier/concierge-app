@@ -25,7 +25,7 @@ type ThunkAction = (dispatch: Dispatch) => any;
 
 export const login = (credentials: Credentials): ThunkAction => async (dispatch: Dispatch): any => {
   try {
-    const response = await axios.post('http://localhost:3000/admin/login', credentials);
+    const response = await axios.post('http://89.86.71.5/admin/login', credentials);
     const result = {
       id: response.data.result._id,
       token: response.data.token,
