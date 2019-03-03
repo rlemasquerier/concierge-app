@@ -23,13 +23,14 @@ class FeedTheCat extends Component<Props> {
         <div>Feed The Cat</div>
         <Button onClick={this.onClickFeedCat}>Je lui ai donné à mangé</Button>
         <div>
-          {feedRecords.map(record => {
-            return (
-              <div key={record._id}>
-                Nourri le {record.date} par {record.user}
-              </div>
-            );
-          })}
+          {feedRecords &&
+            feedRecords.map(record => {
+              return (
+                <div key={record._id}>
+                  Nourri le {record.date} par {record.user}
+                </div>
+              );
+            })}
         </div>
         <Link to={`/`}>Retour au Dashboard</Link>
       </Page>
