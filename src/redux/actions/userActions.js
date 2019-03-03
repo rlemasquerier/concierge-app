@@ -35,6 +35,6 @@ export const login = (credentials: Credentials): ThunkAction => async (dispatch:
     dispatch(createLoginAction(result));
     return result;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };

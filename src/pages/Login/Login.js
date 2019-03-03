@@ -10,6 +10,7 @@ type Props = {
   classes: Object,
   simpleAction: () => any,
   login: ({ mail: string, password: string }) => Promise<any>,
+  history: Object,
 };
 
 type State = {};
@@ -30,7 +31,13 @@ const validationSchema = Yup.object().shape({
 class Login extends Component<Props, State> {
   submitForm = async (values: { mail: string, password: string }, actions: Object) => {
     this.props.simpleAction();
-    await this.props.login(values);
+    try {
+      await this.props.login(values);
+      this.props.history.push('/');
+    } catch (error) {
+      actions.setFieldError('password', 'Identifiant ou mot de passe invalide');
+      console.log(error);
+    }
   };
   render() {
     const { classes } = this.props;

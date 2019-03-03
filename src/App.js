@@ -16,12 +16,15 @@ type Props = {};
 
 const isAuthenticated = true;
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props => (isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />)}
-  />
-);
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={props => (isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />)}
+    />
+  );
+};
+
 class App extends Component<Props> {
   render() {
     const { store, persistor } = configureStore();
