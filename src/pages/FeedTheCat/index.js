@@ -1,3 +1,3 @@
 // @flow
 
-export { default as FeedTheCat } from './FeedTheCat';
+export { default as FeedTheCat } from './FeedTheCat.container';
