@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import LEDControl from '../../components/LEDControl/LEDControl';
 import '../../index.css';
@@ -17,7 +18,6 @@ class App extends Component<Props> {
     return (
       <Page>
         <div className={classes.main}>
-          <hr />
           <div>Content</div>
           <div>
             {moment()
@@ -26,6 +26,7 @@ class App extends Component<Props> {
           </div>
           <LEDControl />
           <span className={['icon-home', classes.homeIcon].join(' ')} />
+          <Link to={`/feed-the-cat`}>Feed the cat</Link>
         </div>
       </Page>
     );

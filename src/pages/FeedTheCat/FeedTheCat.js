@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import { Link } from 'react-router-dom';
 import { Page } from '../../components/common';
 
 type Props = {
@@ -11,6 +12,7 @@ class FeedTheCat extends Component<Props> {
     return (
       <Page>
         <div>Feed The Cat</div>
+        <Link to={`/`}>Back to dashboard</Link>
       </Page>
     );
   }
