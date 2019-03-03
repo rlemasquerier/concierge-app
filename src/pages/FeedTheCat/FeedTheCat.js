@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { Link } from 'react-router-dom';
-import { Page } from '../../components/common';
+import { Page, Button } from '../../components/common';
 
 type Props = {
   classes: Object,
@@ -9,6 +9,10 @@ type Props = {
 };
 
 class FeedTheCat extends Component<Props> {
+  onClickFeedCat = async () => {
+    await this.props.addFeedRecord();
+    await this.props.getFeedRecords();
+  };
   componentDidMount() {
     this.props.getFeedRecords();
   }
@@ -17,7 +21,7 @@ class FeedTheCat extends Component<Props> {
     return (
       <Page>
         <div>Feed The Cat</div>
-
+        <Button onClick={this.onClickFeedCat}>Je lui ai donné à mangé</Button>
         <div>
           {feedRecords.map(record => {
             return (
