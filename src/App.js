@@ -15,7 +15,6 @@ type Props = {};
 class App extends Component<Props> {
   render() {
     const { store, persistor } = configureStore();
-    persistor.purge();
     return (
       <MuiThemeProvider theme={muiTheme}>
         <Provider store={store}>
